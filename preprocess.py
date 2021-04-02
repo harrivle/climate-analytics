@@ -45,7 +45,7 @@ def main():
     dis_data = dis_data.explode('State')  # expand unique `State` values into separate rows
     dis_data.reset_index(drop=True, inplace=True)  # reset row index
 
-    dis_data.to_csv('./data/scrubbed1.csv', index=False)
+    # dis_data.to_csv('./data/scrubbed1.csv', index=False)
 
     # filter temperature dataset
     temp_data = pd.read_csv(temp_path)
@@ -55,7 +55,7 @@ def main():
     temp_data = temp_data.groupby(['Year', 'State'])  # group by year then state
     temp_data = temp_data['AverageTemperature', 'AverageTemperatureUncertainty'].mean()  # take average over groups
 
-    temp_data.to_csv('./data/scrubbed2.csv')
+    # temp_data.to_csv('./data/scrubbed2.csv')
 
     # join on `Year` and `State`
     df = pd.merge(temp_data, dis_data, on=['Year', 'State'], how='inner').set_index(['Year', 'State'], drop=True)
