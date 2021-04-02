@@ -39,7 +39,7 @@ def main():
     # filter disaster dataset
     dis_data = pd.read_excel(dis_path)
     dis_data = dis_data[dis_data['ISO'] == 'USA'].dropna(subset=['Location'])  # show only USA with nonempty `Location`
-    dis_data['Location'] = dis_data['Location'].apply(preproc_state, args=[states])  # preprocess strings in `Location`
+    dis_data['Location'] = dis_data['Location'].apply(preproc_state, args=[states])  # preprocess strings in `Location` (see `preproc_state` for more details)
     dis_data.dropna(subset=['Location'], inplace=True)  # remove resulting empty `Location` values
     dis_data.rename(columns={'Location': 'State'}, inplace=True)  # rename `Location` to `State
     dis_data = dis_data.explode('State')  # expand unique `State` values into separate rows
@@ -50,8 +50,8 @@ def main():
     # filter temperature dataset
     temp_data = pd.read_csv(temp_path)
     temp_data = temp_data[temp_data['Country'] == 'United States'].dropna()  # filter by United States, remove NaNs
-    temp_data['Year'] = temp_data['dt'].astype('datetime64[ns]').dt.year  # convert string to date, then conver to year
-    temp_data['State'] = temp_data['State'].apply(preproc_state, args=[states, True])  # preprocess state strings
+    temp_data['Year'] = temp_data['dt'].astype('datetime64[ns]').dt.year  # convert string to date, then convert to year
+    temp_data['State'] = temp_data['State'].apply(preproc_state, args=[states, True])  # preprocess state strings (see `preproc_state` for more details)
     temp_data = temp_data.groupby(['Year', 'State'])  # group by year then state
     temp_data = temp_data['AverageTemperature', 'AverageTemperatureUncertainty'].mean()  # take average over groups
 
