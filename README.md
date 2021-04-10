@@ -1,5 +1,32 @@
 # climate-analytics
 
+### List of Tasks:
+
+1. Collaboration Tech Refresher
+    * Git/GitHub
+    * IDE?
+2. Dataset Preprocessing
+    * U.S. focus
+    * By county/state by day/month
+    * Cloud integration?
+3. Evaluation Framework
+    * Standardize input/output
+    * Calculate accuracy, precision, recall
+4. Prediction Models
+    * Simple models (SLR, SVM, or Logistic Regression)
+    * Robust models (Decision Tree, Random Forest, and Holt-Winters)
+    * Parameter optimization?
+5. Tableau Visualization
+    * Disaster sub-type selection and dynamic visualizations
+    * U.S. drill down map
+        * Temperature
+        * Disaster Occurrences
+    * Trend and anomaly graphs
+    * Precision-Recall curve
+    * Accuracy metrics
+    * Tableau Server?
+    * Docker?
+
 ## Important Links
 
 [Project Drive](https://gtvault-my.sharepoint.com/:f:/g/personal/harrison3_gatech_edu/Eob_AFiK-eBIvvi_LEIiOlIBBjTE2BvpE8fXKaotnuQgog?e=FLLuqk)  
