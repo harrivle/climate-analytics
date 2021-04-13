@@ -9,7 +9,7 @@
 
 ### When changes are ready to be pushed, go through these steps:
 
-1. Use `git status` to check the status of your local repository.
+1. Use `git fetch` then `git status` to check the status of your local repository.
    1. If you are behind `master`, attempt to `git pull` to update your local repository. If conflicts arise because of this, message in the group chat.
 2. Use `git add [FILEPATH]` to add any new or modified files you wish to upload.
     1. If you make a mistake and want to remove a file from the commit, use `git reset [FILEPATH]` to unstage the file.
