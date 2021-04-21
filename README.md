@@ -4,9 +4,9 @@
 
 ### List of Tasks:
 
-1. Collaboration Tech Refresher
-    * Git/GitHub
-    * IDE?
+1. ~~Collaboration Tech Refresher~~
+    * ~~Git/GitHub~~
+    * ~~IDE~~
 2. Dataset Preprocessing
     * U.S. focus
     * By county/state by day/month
