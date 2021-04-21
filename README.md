@@ -15,7 +15,7 @@
     * Standardize input/output
     * Calculate accuracy, precision, recall, etc.
 4. Prediction Models
-    * Simple models (SLR, SVM, or Logistic Regression)
+    * Simple models (Logistic Regression or SVM)
     * Robust model (Holt-Winters)
     * Parameter optimization?
 5. Tableau Visualization
