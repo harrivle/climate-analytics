@@ -27,15 +27,16 @@ for state in df['state'].unique():
     plt.title(state)
     plt.show()
 
-    model_df['anomaly'] = np.where(model_df['error'] >= model_df['std'], 1, 0)
+    model_df['anomaly'] = np.where(model_df['error'] >= model_df['std'] * 1.5, 1, 0)
 
     conf = confusion_matrix(model_df['disaster_occurrence'], model_df['anomaly']).ravel()
-    conf_df.append([state] + list(conf))
+    d = {'state': state, 'tn': conf[0], 'fp': conf[1], 'fn': conf[2], 'tp': conf[3]}
+    conf_df = conf_df.append(d, ignore_index=True)
 
     if out_df is None:
         out_df = model_df
     else:
-        out_df.append(model_df)
+        out_df = out_df.append(model_df)
 
 print(conf_df)
 out_df.to_csv('./output/arima_state_month.csv', index=False)
